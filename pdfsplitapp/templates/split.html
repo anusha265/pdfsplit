@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Split</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin: 100px auto;
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333333;
+        }
+        
+        .result-message {
+            text-align: center;
+            color: #333333;
+            margin-top: 20px;
+        }
+        
+        .result-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #4caf50;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .result-link:hover {
+            text-decoration: underline;
+        }
+        
+        .error-message {
+            text-align: center;
+            color: #e53935;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PDF Split Result</h1>
+        {% if output_filename %}
+            <p class="result-message">The PDF has been split successfully!</p>
+            <p class="result-link">Download the split PDF: <a href="{{ output_url }}" download>{{ output_filename }}</a></p>
+        {% else %}
+            <p class="error-message">There was an error splitting the PDF.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
